@@ -14,7 +14,7 @@ This is a simple addon and accompanying keymaps that make the transform tools wo
 
 **There are also two keymaps included for your convenience.**
 
--QWER_Blender_Keymap.py is based on the default Blender 2.80 keymap with the following changes:
+- QWER_Blender_Keymap.py is based on the default Blender 2.80 keymap with the following changes:
  - Q toggles selection modes.
  - W toggles the Move gizmo.
  - CTRL+Alt+W adds the Move gizmo using the AddMove mode.
@@ -28,7 +28,7 @@ This is a simple addon and accompanying keymaps that make the transform tools wo
  - E shortcut for extrude in edit mode was changed to CTRL+E
  - X was changed from delete to the Quick User Menu
 
--QWER_Industry_Keymap.py is based on the Industry Compatible Keymap that ships with Blender, but has the following changes:
+- QWER_Industry_Keymap.py is based on the Industry Compatible Keymap that ships with Blender, but has the following changes:
  - Q toggles selection modes.
  - W toggles the Move gizmo.
  - CTRL+Alt+W adds the Move gizmo using the AddMove mode.
