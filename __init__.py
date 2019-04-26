@@ -10,9 +10,9 @@ bl_info = {
 
 import bpy
 
-from . qwer_op import Qwer_OT_Operator
+from . qwer_op import Qwer_OT_Operator, TweakBetter
 from . qwer_panel import Qwer_PT_Panel
 
-classes = (Qwer_OT_Operator, Qwer_PT_Panel)
+classes = (Qwer_OT_Operator, Qwer_PT_Panel, TweakBetter)
 
 register, unregister = bpy.utils.register_classes_factory(classes)
