@@ -5,7 +5,18 @@ Industry standard move, rotate and scale interaction for Blender 2.80.
 
 This is a simple addon and accompanying keymaps that make the transform tools and select active tools work in a way more similar to other DCCs while also making the traditional Blender fast transform tools more discoverable. 
 
-Currently, the move rotate and scale operations can be triggered via shortcut key or using the QWER tab in the N panel. There is also a "Tweak Better" modifier that is meant to take the place of the tweak behavior in the Select Active Tool. What this all means is that the move rotate and scale Active Tools never need to be used. They are replaced with the QWER Panel tools which basically just activate the Gizmos currently found in the Viewport Gizmos dropdown in the 3d View. These work independently of the other Active Tools, meaning you can have Box Select, Circle Select, or Lasso select enabled and a drag in the viewport makes a selection instead of transforming (as in the transform active tools). If instead, you have the Select active tool enabled, a drag will perform the action of whatever Gizmo is currently active. If you have no gizmo active, the tool performs as usual with a move tweak action. Multiple gizmos active will transform based on the highest selected transform type (Move taking precedence over Rotate).
+Currently, the move rotate and scale operations can be triggered via shortcut key or using the QWER tab in the N panel. 
+
+![QWER Panel](https://i.ibb.co/wwq6V1Z/QWER-Panel.png)
+
+There is also a "Tweak Better" modifier that is meant to take the place of the tweak behavior in the Select Active Tool. 
+
+![Select Active Tool](https://i.ibb.co/D4VLfpM/Select-Active-Tool.png)
+
+What this all means is that the move rotate and scale Active Tools never need to be used. They are replaced with the QWER Panel tools which basically just activate the Gizmos currently found in the Viewport Gizmos dropdown in the 3d View. These work independently of the other Active Tools, meaning you can have Box Select, Circle Select, or Lasso select enabled and a drag in the viewport makes a selection instead of transforming (as in the transform active tools). If instead, you have the Select active tool enabled, a drag will perform the action of whatever Gizmo is currently active. If you have no gizmo active, the tool performs as usual with a move tweak action. Multiple gizmos active will transform based on the highest selected transform type (Move taking precedence over Rotate).
+
+The buttons in the QWER Panel can be assigned shortcuts like any other button in blender. Just right click on the button and choose "Assign Shortcut" from the dropdown. Also the Select Active Tool can be modified to tweak using my Tweak Better transform tool by adding a new entry under the "3D View Tool: Select" category like as in the picture below:
+![TweakBetter](https://i.ibb.co/rm8XFcn/Tweak-Better-Keymap.png)
 
 **Background**
 
