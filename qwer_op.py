@@ -1,5 +1,5 @@
 import bpy
-from bpy.props import StringProperty
+from bpy.props import StringProperty, BoolProperty
 
 class Qwer_OT_Operator(bpy.types.Operator):
     bl_idname = "view3d.qwer_controls"
@@ -54,13 +54,15 @@ class TweakBetter(bpy.types.Operator):
     bl_idname = "object.tweak_better"
     bl_label = "Tweak Better"
 
-    tmode: StringProperty()
+    tmode: StringProperty(name="Transform Mode")
+    release: BoolProperty(name="Confirm on Release")
 
     def modal(self, context, event):
         if event.type == 'MOUSEMOVE':
             bpy.ops.transform.transform(
                             'INVOKE_DEFAULT',
-                            mode=self.tmode)
+                            mode=self.tmode,
+                            release_confirm=self.release)
             return {'FINISHED'}
 
         return {'RUNNING_MODAL'}
