@@ -138,3 +138,90 @@ class TweakBetter(bpy.types.Operator):
         else:
             self.report({'WARNING'}, "No active object, could not finish")
             return {'CANCELLED'}
+
+class MoveInvoke(bpy.types.Operator):
+    bl_idname = "view3d.move_invoke"
+    bl_label = "Invoke Move with Gizmo"
+    bl_description = "Enable the move gizmo and invoke the move command"
+    
+    release: BoolProperty(name="Confirm on Release")
+
+    def modal(self, context, event):
+        bpy.ops.transform.transform(
+                    'INVOKE_DEFAULT',
+                    mode='TRANSLATION',
+                    release_confirm=self.release)
+        return {'FINISHED'}
+
+    def invoke(self, context, event):        
+        areas = bpy.context.workspace.screens[0].areas
+        if context.object:
+            for area in areas:
+                for space in area.spaces:
+                    if space.type == 'VIEW_3D':
+                        space.show_gizmo_object_translate = True
+                        space.show_gizmo_object_rotate = False
+                        space.show_gizmo_object_scale = False
+            context.window_manager.modal_handler_add(self)
+            return {'RUNNING_MODAL'}
+        else:
+            self.report({'WARNING'}, "No active object, could not finish")
+            return {'CANCELLED'}
+
+class RotateInvoke(bpy.types.Operator):
+    bl_idname = "view3d.rotate_invoke"
+    bl_label = "Invoke Rotate with Gizmo"
+    bl_description = "Enable the rotate gizmo and invoke the rotate command"
+    
+    release: BoolProperty(name="Confirm on Release")
+
+    def modal(self, context, event):
+        bpy.ops.transform.transform(
+                    'INVOKE_DEFAULT',
+                    mode='ROTATION',
+                    release_confirm=self.release)
+        return {'FINISHED'}
+
+    def invoke(self, context, event):        
+        areas = bpy.context.workspace.screens[0].areas
+        if context.object:
+            for area in areas:
+                for space in area.spaces:
+                    if space.type == 'VIEW_3D':
+                        space.show_gizmo_object_translate = False
+                        space.show_gizmo_object_rotate = True
+                        space.show_gizmo_object_scale = False
+            context.window_manager.modal_handler_add(self)
+            return {'RUNNING_MODAL'}
+        else:
+            self.report({'WARNING'}, "No active object, could not finish")
+            return {'CANCELLED'}
+
+class ScaleInvoke(bpy.types.Operator):
+    bl_idname = "view3d.scale_invoke"
+    bl_label = "Invoke Scale with Gizmo"
+    bl_description = "Enable the scale gizmo and invoke the scale command"
+    
+    release: BoolProperty(name="Confirm on Release")
+
+    def modal(self, context, event):
+        bpy.ops.transform.transform(
+                    'INVOKE_DEFAULT',
+                    mode='RESIZE',
+                    release_confirm=self.release)
+        return {'FINISHED'}
+
+    def invoke(self, context, event):        
+        areas = bpy.context.workspace.screens[0].areas
+        if context.object:
+            for area in areas:
+                for space in area.spaces:
+                    if space.type == 'VIEW_3D':
+                        space.show_gizmo_object_translate = False
+                        space.show_gizmo_object_rotate = False
+                        space.show_gizmo_object_scale = True
+            context.window_manager.modal_handler_add(self)
+            return {'RUNNING_MODAL'}
+        else:
+            self.report({'WARNING'}, "No active object, could not finish")
+            return {'CANCELLED'}
