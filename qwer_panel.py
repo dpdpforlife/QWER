@@ -29,6 +29,10 @@ class Qwer_PT_Panel(bpy.types.Panel):
         row.operator('view3d.qwer_controls', text="Rotate", depress=dep_rot).rotate = True
         row.operator('view3d.qwer_controls', text="Scale", depress=dep_scale).scale = True
         row = layout.row(align=True)
+        row.operator('view3d.qwer_controls', text="ExMove").mode = "Move"
+        row.operator('view3d.qwer_controls', text="ExRotate").mode = "Rotate"
+        row.operator('view3d.qwer_controls', text="ExScale").mode = "Scale"
+        row = layout.row(align=True)
         row.operator('view3d.qwer_controls', text="AMove").mode = "AddMove"
         row.operator('view3d.qwer_controls', text="ARotate").mode = "AddRotate"
         row.operator('view3d.qwer_controls', text="AScale").mode = "AddScale"

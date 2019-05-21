@@ -79,8 +79,6 @@ class Qwer_OT_Operator(bpy.types.Operator):
                         space.show_gizmo_object_translate = False
                         space.show_gizmo_object_rotate = False
                         space.show_gizmo_object_scale^= True
-        return {'FINISHED'}
-        
         if self.mode == "AddMove":
             for area in areas:
                 for space in area.spaces:
