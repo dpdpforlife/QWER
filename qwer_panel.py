@@ -25,9 +25,9 @@ class Qwer_PT_Panel(bpy.types.Panel):
         layout = self.layout
         
         row = layout.row(align=True)
-        row.operator('view3d.qwer_controls', text="Move", depress=dep_move).move = True
-        row.operator('view3d.qwer_controls', text="Rotate", depress=dep_rot).rotate = True
-        row.operator('view3d.qwer_controls', text="Scale", depress=dep_scale).scale = True
+        row.operator('view3d.qwer_buttons', text="Move", depress=dep_move).move = True
+        row.operator('view3d.qwer_buttons', text="Rotate", depress=dep_rot).rotate = True
+        row.operator('view3d.qwer_buttons', text="Scale", depress=dep_scale).scale = True
         row = layout.row(align=True)
         row.operator('view3d.qwer_controls', text="ExMove").mode = "Move"
         row.operator('view3d.qwer_controls', text="ExRotate").mode = "Rotate"
@@ -57,8 +57,8 @@ def draw_topbar(self, context):
     if context.region.alignment != 'RIGHT':
         layout = self.layout
         row = layout.row(align=True)
-        row.operator('view3d.qwer_controls', text="M", depress=dep_move).move = True
-        row.operator('view3d.qwer_controls', text="R", depress=dep_rot).rotate = True
-        row.operator('view3d.qwer_controls', text="S", depress=dep_scale).scale = True
+        row.operator('view3d.qwer_buttons', text="M", depress=dep_move).move = True
+        row.operator('view3d.qwer_buttons', text="R", depress=dep_rot).rotate = True
+        row.operator('view3d.qwer_buttons', text="S", depress=dep_scale).scale = True
 
     
