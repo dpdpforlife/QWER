@@ -5,10 +5,9 @@ Industry standard move, rotate and scale interaction for Blender 2.80.
 
 This is a simple addon and accompanying keymaps that make the transform tools and select active tools work in a way more similar to other DCCs while also making the traditional Blender fast transform tools more discoverable. 
 
-Using this addon, the move rotate and scale gizmos can be triggered via shortcut key, using the M/R/S buttons in the top bar, or using the QWER tab in the N panel. 
+Currently, the move rotate and scale operations can be triggered via shortcut key or using the QWER tab in the N panel. 
 
-*note: the tool settings topbar is hidden by default in 3d views. Right click on the 3d view header and enable "Tool Settings"*
-[![QWER Panel](https://media.giphy.com/media/jpEMf3bXgP1eibDjzR/giphy.gif)](https://media.giphy.com/media/jpEMf3bXgP1eibDjzR/giphy.gif)
+![QWER Panel](https://i.ibb.co/wwq6V1Z/QWER-Panel.png)
 
 There is also a "Tweak Better" modifier that is meant to take the place of the tweak behavior in the Select Active Tool. 
 
@@ -23,7 +22,7 @@ The buttons in the QWER Panel can be assigned shortcuts like any other button in
 
 The 2.80 active tools are great in some respects, but the paradigm breaks down with the transform active tools. These make selecting and transforming multiple objects a slow, tedious process requiring the user to switch back and forth between transform tools like move and the selection tools like box select. This issue has been addressed by Blender developers by adding gizmo visibility toggles, but these are hidded in a dropdown in the 3d view and require too many clicks to activate. This addon allows you to have various selection modes enabled while also having access to the transform tools. The main difference being that clicking and dragging from a blank area of the screen will select instead of translating. This is not only the most common way of handling select and transform operations by the majority of DCC software, but is also a faster and more intuitive way of working when compared to using the Active Tools alone.
 
-**The addon has 8 operators/modes.**
+**The addon has 7 operators.**
 
 - Move (view3d.qwer_controls.(mode="Move")) activates only the move gizmo. Other transform gizmos are hidden. 
 - Rotate (view3d.qwer_controls.(mode="Rotate")) activates only the rotate gizmo. Other transform gizmos are hidden.
@@ -31,11 +30,9 @@ The 2.80 active tools are great in some respects, but the paradigm breaks down w
 - AddMove (view3d.qwer_controls.(mode="AddMove")) activates the move gizmo, and also keeps any other transform gizmos active. This allows you to have any or all transform gizmos active simultaneously.
 - AddRotate (view3d.qwer_controls.(mode="AddRotate")) activates the Rotate gizmo, and also keeps any other transform gizmos active.
 - AddScale (view3d.qwer_controls.(mode="AddScale")) activates the move gizmo, and also keeps any other transform gizmos active.
-- Cycle (view3d.qwer_cycle) cycles through the transform gizmos. Assign this to the spacebar for UE4 style gizmo cycling.
 - TweakBetter (object.tweak_better) a smart transform operator that checks to see what transform gizmos are active and Moves, Rotates or Scales accordingly.
 
 **There are also three keymaps included for your convenience.**
-*note: the keymaps that ship with the addon are problematic. It is probably best if you create a keymap of your own.*
 
 - WGRS_Blender_Keymap.py is based on the default Blender 2.80 keymap with the following changes:
   - W toggles selection modes.

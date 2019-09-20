@@ -7,9 +7,6 @@ class Qwer_OT_Operator(bpy.types.Operator):
     bl_description = "qwer Controls"
 
     mode: StringProperty()
-    move: BoolProperty()
-    rotate: BoolProperty()
-    scale: BoolProperty()
     
     def invoke(self, context, event):
 
@@ -51,48 +48,6 @@ class Qwer_OT_Operator(bpy.types.Operator):
                 for space in area.spaces:
                     if space.type == 'VIEW_3D':
                         space.show_gizmo_object_scale^= True
-        if self.move:
-            if event.shift:
-                for area in areas:
-                    for space in area.spaces:
-                        if space.type == 'VIEW_3D':
-                            space.show_gizmo_object_translate^= True   
-            else:
-                for area in areas:
-                    for space in area.spaces:
-                        if space.type == 'VIEW_3D':
-                            space.show_gizmo_object_translate^= True
-                            space.show_gizmo_object_rotate = False
-                            space.show_gizmo_object_scale = False   
-            self.move = False
-        if self.rotate:
-            if event.shift:
-                for area in areas:
-                    for space in area.spaces:
-                        if space.type == 'VIEW_3D':
-                            space.show_gizmo_object_rotate^= True   
-            else:
-                for area in areas:
-                    for space in area.spaces:
-                        if space.type == 'VIEW_3D':
-                            space.show_gizmo_object_translate = False
-                            space.show_gizmo_object_rotate^= True
-                            space.show_gizmo_object_scale = False   
-            self.rotate = False
-        if self.scale:
-            if event.shift:
-                for area in areas:
-                    for space in area.spaces:
-                        if space.type == 'VIEW_3D':
-                            space.show_gizmo_object_scale^= True
-            else:
-                for area in areas:
-                    for space in area.spaces:
-                        if space.type == 'VIEW_3D':
-                            space.show_gizmo_object_translate = False
-                            space.show_gizmo_object_rotate = False
-                            space.show_gizmo_object_scale^= True   
-            self.scale = False
         return {'FINISHED'}
 
 class Qwer_OT_Buttons(bpy.types.Operator):
